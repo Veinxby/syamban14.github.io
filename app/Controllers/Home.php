@@ -8,16 +8,17 @@ class Home extends BaseController
 {
 
     protected $dataBuku;
+    protected $dataUser;
 
     public function __construct()
     {
-        $this->dataBuku = new Perpustakaan();
+        $this->dataUser = new Perpustakaan();
     }
 
     public function index(): string
     {
         $data = [
-            'buku' => $this->dataBuku->getDataBuku()
+            'user' => $this->dataUser->getDataUser()
         ];
         return view('home/index', $data);
     }

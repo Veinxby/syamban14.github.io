@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class Perpustakaan extends Model
 {
     protected $dbGroup          = 'default';
-    protected $table            = 'BUKU';
+    protected $table            = 'user';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
@@ -15,7 +15,7 @@ class Perpustakaan extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [];
 
-    public function getDataBuku()
+    public function getDataUser()
     {
         return $this->findAll();
     }
