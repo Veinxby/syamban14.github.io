@@ -22,4 +22,25 @@ class Home extends BaseController
         ];
         return view('home/index', $data);
     }
+
+    public function create()
+    {
+        $data = [
+            'title' => 'Create New Galery'
+        ];
+        return view('layout/header', $data)
+            . view('galeri/form_upload')
+            . view('layout/footer');
+    }
+
+    public function simpan()
+    {
+        $this->dataUser->save([
+            'judul' => $this->request->getVar('judul'),
+            'penulis' => $this->request->getVar('penulis'),
+            'penerbit' => $this->request->getVar('penerbit'),
+            'sampul' => $this->request->getVar('sampul')
+        ]);
+        return redirect()->to('/home');
+    }
 }
