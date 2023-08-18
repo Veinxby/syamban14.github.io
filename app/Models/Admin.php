@@ -14,4 +14,9 @@ class Admin extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [];
+
+    public function getDataAdmin()
+    {
+        return $this->findAll();
+    }
 }
